@@ -3,7 +3,7 @@ li, ul{
     margin: 0;
     /* padding: 0; */
     animation: slidein .1s 1;
-    width: 302px;
+    width: 300px;
     font-size: medium;
     font-weight: bold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -66,15 +66,21 @@ body {
     align-items: center;
 }
 
+.inputdiv {
+    width: 100%;
+    display: flex;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
 input {
-    width: 300px;
-    height: 25px;
+    width: 80%;
+    height: 30px;
     /* margin-bottom: 10px; */
     font-size: medium;
     font-weight: bold;
-    border: 2px solid black;
-    border-radius: 5px;
     padding: 10px;
+    border: none;
 }
 .definition{
     width: 300px;
@@ -92,16 +98,23 @@ tr{
 
 .buttons, tr, table, tbody{
     height: 25px;
-    width: 324px;
+    width: 323px;
     padding: 0;
     margin: 0;
-    display: flex;
+    /* display: flex; */
     border: none;
 }
 
+td{
+    display: flex;
+    margin: 0 0 10px 0;
+}
+
 table{
-    margin: 10px 0 10px 0;
-    height: 50px
+    padding: 0;
+    /* margin: 10px 0 10px 0; */
+    height: 128px
+    /* width: 500px; */
 }
 .idkbtn {
     width: 100%;
@@ -119,16 +132,19 @@ table{
     opacity: 50%;
 } */
 
-.infobtn {
-    width: 20%;
+.okbtn {
+    width: 50px;
     height: 50px;
     font-size: medium;
     font-weight: bold;
-    border: 2px solid black;
-    border-radius: 5px;
+    /* border: 2px solid black; */
+    /* border-radius: 5px; */
+    border: none;
+    background-color: cornflowerblue;
+    text-align: center;
 }
 
-.infobtn:active
+.okbtn:active
 {
     opacity: 50%;
 }

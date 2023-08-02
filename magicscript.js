@@ -3,7 +3,7 @@ const guessList = document.querySelector(".guesses");
 const cluesList = document.querySelector(".clues");
 const def = document.querySelector(".definition");
 const giveUpBtn = document.querySelector(".idkbtn");
-// const infoBtn = document.querySelector(".infobtn");
+const okBtn = document.querySelector(".okbtn");
 
 const max = 10;
 const min = 3;
@@ -14,13 +14,17 @@ var myWord="";
 var similarList = new Array();
 var rhymeList = new Array();
 
-const param = {
-    headers: {
-        'X-Api-Key': 'iqyInAiNKlF2ZsQqCtxAhg==45Rd9txHfMDSuoWZ',
-        "Content-Type": "application/json"
-    },
-    method:"GET"
-};
+// const param = {
+//     headers: {
+//         'X-Api-Key': 'iqyInAiNKlF2ZsQqCtxAhg==45Rd9txHfMDSuoWZ',
+//         "Content-Type": "application/json"
+//     },
+//     method:"GET"
+// };
+
+// const param = {
+//     method: "GET", mode: 'cors', headers: { 'Content-Type': 'application/json',}
+// };
 
 function storeSimilar(list){
     for (let index = 0; index < list.length; index++) {
@@ -56,7 +60,7 @@ function storeWord(word)
 function genWord(){
     guess.disabled = true;
     // var randWordUrl = 'https://api.api-ninjas.com/v1/randomword';
-    var randWordUrl = 'https://random-word-api.vercel.app/api?words=1'
+    var randWordUrl = 'https://random-word-api.vercel.app/api?words=1';
 
     // var randWordUrl = 'https://random-word-api.herokuapp.com/word?length='+Math.floor(Math.random() * (max - min + 1) + min);
         fetch(randWordUrl)//, param)
@@ -113,6 +117,7 @@ function createListElem(text, color, size){
 guess.addEventListener("keyup", e => {
     if(e.key === "Enter" && e.target.value)
     {
+        e.target.value=e.target.value.toLowerCase();
         guessList.style.border = "2px solid black";
         guessCount++;
         if
@@ -170,6 +175,18 @@ guess.addEventListener("keyup", e => {
     }
 });
 
+okBtn.addEventListener("click", () => {
+    var keyboardEvent = new KeyboardEvent('keyup', {
+        code: 'Enter',
+        key: 'Enter',
+        charCode: 13,
+        keyCode: 13,
+        view: window
+    });
+    guess.dispatchEvent(keyboardEvent);
+})
+
+
 var btnPressTimes = 0;
 
 giveUpBtn.addEventListener("click", () => {
@@ -200,17 +217,4 @@ giveUpBtn.addEventListener("click", () => {
             }
             break;
     }
-})
-
-// infoBtn.addEventListener("click", () => {
-//     var listElem = document.createElement("li");
-//     listElem.innerText="orange means it's similar to the word";
-//     listElem.style.color="#ffb347";
-//     listElem.style.fontSize="medium";
-//     guessList.prepend(listElem);
-//     var listElem = document.createElement("li");
-//     listElem.innerText="red means it's not related to the word";
-//     listElem.style.color="#ff6961";
-//     listElem.style.fontSize="medium";
-//     guessList.prepend(listElem);
-// })
+});
