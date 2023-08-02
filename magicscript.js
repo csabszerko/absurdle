@@ -53,12 +53,14 @@ function storeWord(word)
         .catch(error=>console.log(error));
     
     guess.disabled = false;
+    okBtn.disabled = false;
 
     getRhymes(myWord);
 }
 
 function genWord(){
     guess.disabled = true;
+    okBtn.disabled = true;
     // var randWordUrl = 'https://api.api-ninjas.com/v1/randomword';
     var randWordUrl = 'https://random-word-api.vercel.app/api?words=1';
 
@@ -132,6 +134,7 @@ guess.addEventListener("keyup", e => {
             createListElem(e.target.value,"#77dd77", "x-large");
             guess.value = "";
             guess.disabled = true;
+            okBtn.disabled = true;
             giveUpBtn.style.backgroundColor = "#77dd77";
             giveUpBtn.innerText = "give me another one";
             btnPressTimes=1;
@@ -201,6 +204,7 @@ giveUpBtn.addEventListener("click", () => {
             guessList.prepend(listElem);
             guess.value = "";
             guess.disabled = true;
+            okBtn.disabled = true;
             giveUpBtn.style.backgroundColor = "#77dd77";
             giveUpBtn.innerText = "give me another one";
             break;

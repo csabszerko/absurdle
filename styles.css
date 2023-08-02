@@ -107,6 +107,7 @@ tr{
     margin: 0;
     /* display: flex; */
     border: none;
+    color: black;
 }
 
 td{
@@ -142,11 +143,11 @@ table{
     font-size: medium;
     font-weight: bold;
     /* border: 2px solid black; */
-    /* border-radius: 5px; */
+    border-radius: 0 3px 3px 0;
     border: none;
     background-color: cornflowerblue;
     text-align: center;
-    color:black !important;
+    color:black;
 }
 
 .okbtn:active
