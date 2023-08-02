@@ -50,7 +50,7 @@ function storeWord(word)
     
     guess.disabled = false;
 
-    getRhymes(word);
+    getRhymes(myWord);
 }
 
 function genWord(){
