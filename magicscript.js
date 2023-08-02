@@ -14,6 +14,8 @@ var myWord="";
 var similarList = new Array();
 var rhymeList = new Array();
 
+okBtn.style.color = "black";
+
 // const param = {
 //     headers: {
 //         'X-Api-Key': 'iqyInAiNKlF2ZsQqCtxAhg==45Rd9txHfMDSuoWZ',
