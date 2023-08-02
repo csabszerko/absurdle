@@ -150,7 +150,7 @@ guess.addEventListener("keyup", e => {
         guess.value = "";
 
 
-        if(guessCount%5==0 && guessCount%10!=0 || (guessCount%5==0 && rhymeList.length == 0))
+        if(guessCount%3==0 && guessCount%6!=0 || (guessCount%5==0 && rhymeList.length == 0))
         {
             cluesList.style.margin= "0px 0 10px 0";
             cluesList.style.border = "2px solid black";
@@ -159,7 +159,7 @@ guess.addEventListener("keyup", e => {
             listElem.style.color="#fdfd96";
             listElem.style.fontSize="larger";
             cluesList.prepend(listElem);
-        }else if(guessCount%10==0 && rhymeList.length != 0)
+        }else if(guessCount%6==0 && rhymeList.length != 0)
         {
             var listElem = document.createElement("li");
             listElem.innerText="the word rhymes with " + rhymeList[Math.floor(Math.random()*rhymeList.length)];
