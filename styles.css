@@ -142,6 +142,7 @@ table{
     border: none;
     background-color: cornflowerblue;
     text-align: center;
+    color: black;
 }
 
 .okbtn:active
