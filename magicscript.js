@@ -14,7 +14,7 @@ var myWord="";
 var similarList = new Array();
 var rhymeList = new Array();
 
-okBtn.style.color = "black";
+// okBtn.innerText = "black";
 
 // const param = {
 //     headers: {

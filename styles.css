@@ -107,6 +107,7 @@ tr{
     margin: 0;
     /* display: flex; */
     border: none;
+    color: black;
 }
 
 td{
