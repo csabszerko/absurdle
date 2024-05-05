@@ -14,20 +14,6 @@ var myWord="";
 var similarList = new Array();
 var rhymeList = new Array();
 
-// okBtn.innerText = "black";
-
-// const param = {
-//     headers: {
-//         'X-Api-Key': 'iqyInAiNKlF2ZsQqCtxAhg==45Rd9txHfMDSuoWZ',
-//         "Content-Type": "application/json"
-//     },
-//     method:"GET"
-// };
-
-// const param = {
-//     method: "GET", mode: 'cors', headers: { 'Content-Type': 'application/json',}
-// };
-
 function storeSimilar(list){
     for (let index = 0; index < list.length; index++) {
         similarList[index] = list[index].word;
